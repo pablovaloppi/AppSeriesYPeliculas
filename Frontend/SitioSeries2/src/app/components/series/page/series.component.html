@@ -1,0 +1,11 @@
+<div class="container-series">
+  <mat-tab-group (selectedTabChange)="selectedTabValue($event)">
+    <mat-tab class="tab" *ngFor="let tab of categories" [label]="tab.nombre">
+      <div class="content">
+        <h2>Series de {{categorySelected}} </h2>
+        <app-content-viewer [list]="serieList ">
+        </app-content-viewer>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

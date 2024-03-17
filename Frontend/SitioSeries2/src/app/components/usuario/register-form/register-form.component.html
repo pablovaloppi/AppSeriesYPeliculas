@@ -1,0 +1,67 @@
+<div class="content-register">
+    <div class="close-window">
+        <span (click)="closeWindow()">X</span>
+    </div>
+    <h2 class="title">Register</h2>
+    <form (submit)="onRegister()" class="form" [formGroup]="registerForm">
+        <div class="user_pass">
+            <div class="username">
+                <input [ngClass]="{'input':!registerForm.controls['usuario'].errors?.['required'],'input-error':registerForm.controls['usuario'].errors?.['required']}" type="text"
+                    placeholder="Username" formControlName="usuario">
+                <span *ngIf="registerForm.controls['usuario'].errors?.['required']" class="error-message">El campo es requerido.</span>
+                <span *ngIf="registerForm.controls['usuario'].errors?.['minlength']" class="error-message">El usuario debe ser mas extenso.</span>
+            </div>
+            <div class="password">
+                <input [ngClass]="{'input':!registerForm.controls['password'].errors?.['required'],'input-error':registerForm.controls['password'].errors?.['required']}"
+                    type="password" placeholder="Password" formControlName="password">
+                <span *ngIf="registerForm.controls['password'].errors?.['required']" class="error-message">El campo es requerido.</span>
+
+            </div>
+        </div>
+        <div class="nombres">
+            <div class="firstname">
+                <input [ngClass]="{'input':!registerForm.controls['nombre'].errors?.['required'],'input-error':registerForm.controls['nombre'].errors?.['required']}" type="text"
+                    placeholder="First Name" formControlName="nombre">
+                <span *ngIf="registerForm.controls['nombre'].errors?.['required']" class="error-message">El campo es requerido.</span>
+            </div>
+            <div class="lastname">
+                <input [ngClass]="{'input':!registerForm.controls['apellido'].errors?.['required'],'input-error':registerForm.controls['apellido'].errors?.['required']}" type="text"
+                    placeholder="Last Name" formControlName="apellido">
+                <span *ngIf="registerForm.controls['apellido'].errors?.['required']" class="error-message">El campo es requerido.</span>
+            </div>
+        </div>
+        <div class="email-container">
+            <input [ngClass]="{'input':!registerForm.controls['email'].errors?.['required'],'input-error':registerForm.controls['email'].errors?.['required'] || registerForm.controls['email'].errors?.['email']}" type="email"
+                placeholder="Email" formControlName="email">
+            <span *ngIf="registerForm.controls['email'].errors?.['required']" class="error-message">El campo es requerido.</span>
+            <span *ngIf="registerForm.controls['email'].errors?.['email']" class="error-message">El email es invalido.</span>
+        </div>
+        <div class="edad-container">
+            <input [ngClass]="{'input':!registerForm.controls['edad'].errors?.['required'],'input-error':registerForm.controls['edad'].errors?.['required']}" type="number"
+                placeholder="Edad" formControlName="edad">
+            <span *ngIf="registerForm.controls['edad'].errors?.['required']" class="error-message">El campo es requerido.</span>
+
+        </div>
+        <div class="pais-container">
+            <select [ngClass]="{'input-select':!registerForm.controls['pais'].errors?.['required'],'input-select-error':registerForm.controls['pais'].errors?.['required']}" formControlName="pais">
+                <option class="input-select-option" value="" disabled selected>Chooser your Country</option>
+                <option *ngFor="let pais of paises" class="input-select-option" value="{{pais.id}}">{{pais.nombre | titlecase}}</option>               
+            </select>
+            <span *ngIf="registerForm.controls['pais'].errors?.['required']" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="direccion-container">
+            <input [ngClass]="{'input':!registerForm.controls['direccion'].errors?.['required'],'input-error':registerForm.controls['direccion'].errors?.['required']}" type="text" placeholder="Address" formControlName="direccion">
+            <span *ngIf="registerForm.controls['direccion'].errors?.['required']" class="error-message">El campo es requerido.</span>
+
+        </div>
+        <div class="check-policy">
+            <input [ngClass]="{'input-checkbox':!registerForm.controls['terms'].errors?.['required'],'input-checkbox-error':registerForm.controls['terms'].errors?.['required']}" type="checkbox" formControlName="terms">I accept the Terms of Use & Privacy Policy.
+            <span *ngIf="registerForm.controls['terms'].errors?.['required']" class="error-message">Debes aceptar los terminos y condiciones.</span>
+        </div>
+        <button [disabled]="registerForm.invalid" [ngClass]="{'button-yellow': !registerForm.invalid, 'button-disabled': registerForm.invalid}" type="submit">Register Now</button>
+    </form>
+</div>
+
+<div *ngIf="!isComplete" class="disable-container">
+    <mat-spinner class="spinner"></mat-spinner>
+  </div>

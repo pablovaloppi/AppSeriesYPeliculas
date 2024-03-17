@@ -1,0 +1,23 @@
+.mat-mdc-tab .mdc-tab__text-label{
+    color: var(--fontColorPrimary) !important;
+}
+
+.mat-mdc-tab .mdc-tab__text-label:hover{
+    font-weight: 600;
+}
+
+
+.mat-mdc-tab.mdc-tab--active .mdc-tab__text-label{
+    color: var(--fontColorSecundary) !important;
+    font-weight: 600;
+}
+
+.container-series{
+    .content{
+        padding: 20px;
+    h2{
+        color: white;
+    }
+    }
+    
+}

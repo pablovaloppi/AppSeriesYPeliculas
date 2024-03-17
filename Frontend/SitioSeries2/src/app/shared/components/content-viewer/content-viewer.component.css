@@ -1,0 +1,17 @@
+.container{
+    width: 100%;
+    height:auto;
+}
+
+.content-viewer{
+    padding: 25px;
+    overflow-y: hidden;
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+    flex-wrap: wrap;
+
+    .card{
+        margin: 2px 2px 6px 2px;
+    }
+}

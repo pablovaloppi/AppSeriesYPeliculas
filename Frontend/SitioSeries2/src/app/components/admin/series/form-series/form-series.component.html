@@ -1,0 +1,73 @@
+<H1 class="header" *ngIf="!isEdit">Agregar nueva serie</H1>
+<H1 class="header" *ngIf="isEdit">Editar serie</H1>
+<div class="container">
+
+    <form (ngSubmit)="onNewOrEditSerie()" class="form" [formGroup]="formSerie">
+        <div class="titulo">
+            <input [ngClass]="{'input':!isRequired('titulo'),'input-error':isRequired('titulo')}" type="text"
+                placeholder="Title" formControlName="titulo">
+            <span *ngIf="isRequired('titulo')" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="description">
+            <input [ngClass]="{'input':!isRequired('descripcion'),'input-error':isRequired('descripcion')}" type="text"
+                placeholder="Description" formControlName="descripcion">
+            <span *ngIf="isRequired('descripcion')" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="category">
+            <select [ngClass]="{'input-select':!isRequired('idCategoria'),'input-select-error':isRequired('idCategoria')}"
+                formControlName="categoriaId">
+                <option class="input-select-option" value="" disabled selected>Choose Category</option>
+                <option *ngFor="let categoria of categorias" class="input-select-option" value={{categoria.id}}>{{categoria.nombre}}</option>   
+            </select>
+            <span *ngIf="isRequired('idCategoria')" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="imgPortada">
+            <input [ngClass]="{'input':!isRequired('imgPortada'),'input-error':isRequired('imgPortada')}" type="text"
+                placeholder="Link Imagen Portada" formControlName="imgPortada">
+            <span *ngIf="isRequired('imgPortada')" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="pais">
+            <select [ngClass]="{'input-select':!isRequired('pais'),'input-select-error':isRequired('pais')}"
+                formControlName="paisId">
+                <option class="input-select-option" value="" disabled selected>Choose your Country</option>
+                <option *ngFor="let pais of paises" class="input-select-option" value={{pais.id}}>{{pais.nombre}}</option>
+            </select>
+            <span *ngIf="isRequired('pais')" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="anio">
+            <input [ngClass]="{'input':!isRequired('anio'),'input-error':isRequired('anio')}" type="number"
+                placeholder="Año" formControlName="anio" >
+            <span *ngIf="isRequired('anio')" class="error-message">El campo es requerido.</span>
+            <span *ngIf="formSerie.controls['anio'].errors?.['isInRange']" class="error-message">El año es invalido.</span>
+        </div>
+        <div class="duration">
+            <input [ngClass]="{'input':!isRequired('duracion'),'input-error':isRequired('duracion')}" type="number"
+                placeholder="Duration" formControlName="duracion">
+            <span *ngIf="isRequired('duracion')" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="temporada">
+            <input [ngClass]="{'input':!isRequired('temporada'),'input-error':isRequired('temporada')}" type="number"
+                placeholder="Temporada" formControlName="temporada">
+            <span *ngIf="isRequired('temporada')" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="capitulo">
+            <input [ngClass]="{'input':!isRequired('capitulo'),'input-error':isRequired('capitulo')}" type="number"
+                placeholder="Capitulo" formControlName="capitulo">
+            <span *ngIf="isRequired('capitulo')" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="link">
+            <input [ngClass]="{'input':!isRequired('link'),'input-error':isRequired('link')}" type="text"
+                placeholder="Link" formControlName="link">
+            <span *ngIf="isRequired('link')" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="buttons">
+            <button *ngIf="isEdit" [disabled]="formSerie.invalid"
+                [ngClass]="{'button-yellow': !formSerie.invalid, 'button-disabled': formSerie.invalid}"
+                type="submit">Editar</button>
+            <button *ngIf="!isEdit"[disabled]="formSerie.invalid"
+                [ngClass]="{'button-yellow': !formSerie.invalid, 'button-disabled': formSerie.invalid}"
+                type="submit">Agregar</button>
+            <button class="button-black" type="reset">Borrar</button>
+        </div>
+    </form>
+</div>

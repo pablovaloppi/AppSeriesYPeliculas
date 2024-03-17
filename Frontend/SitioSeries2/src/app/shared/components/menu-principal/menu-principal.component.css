@@ -1,0 +1,127 @@
+
+.menu{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    gap: 150px;
+    align-items:center;
+    background-color:var(--backgroundColorNavbar);
+}
+
+.link{
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+}
+li{
+    margin: 10px;
+    list-style: none;
+    font-family: sans-serif;
+    
+}
+.content-right{
+    display: flex;
+    align-items: center;
+}
+
+
+.content-left{
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    margin-left: 20px;
+    font-size: 1.7rem;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    color: var(--fontColorPrimary);
+
+    .icon{
+        color:var(--fontColorSecundary);
+        margin-right: 5px;
+    }
+    span{
+        font-weight: 600;
+    }
+}
+.title:hover{
+    cursor:pointer;
+}
+.linkActive{
+    color: var(--fontColorPrimary);
+    padding-bottom:22px;
+    border-bottom:  3px solid var(--fontColorSecundary);
+}
+
+.perfil:hover{
+    cursor: pointer;
+    
+
+    .icon{
+        font-weight: 600;
+    }
+}
+.icon{
+    color: var(--fontColorPrimary);
+}
+.imgPerfil{
+    display: flex;
+    align-items: center;
+    width: 84px;
+    img{
+        border-radius: 50%;
+        object-fit: contain;
+        width: 100%;
+    }
+    
+}
+
+a{
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: hsla(0, 0%, 100%, 0.5);
+    transition: all 0.2s ease !important;
+}
+
+a:hover{
+    cursor: pointer;
+    color: var(--fontColorPrimary);
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    .perfil{
+        display: flex;
+        align-items: center;
+        gap:10px;
+    }
+}
+
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.mat-mdc-menu-content {
+    background-color:  var(--backroundColor) ;
+}
+
+.mat-mdc-menu-item-text{
+    transition: all 0.2s ease !important;
+    color:  hsla(0, 0%, 100%, 0.5) !important;
+}
+.mat-mdc-menu-item-text:hover{
+    color: var(--fontColorPrimary) !important;
+}
+

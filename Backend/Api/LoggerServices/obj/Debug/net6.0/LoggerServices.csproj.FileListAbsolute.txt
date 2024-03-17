@@ -1,0 +1,17 @@
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\bin\Debug\net6.0\LoggerServices.deps.json
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\bin\Debug\net6.0\LoggerServices.dll
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\bin\Debug\net6.0\LoggerServices.pdb
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\bin\Debug\net6.0\Contracts.dll
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\bin\Debug\net6.0\Entities.dll
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\bin\Debug\net6.0\Contracts.pdb
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\bin\Debug\net6.0\Entities.pdb
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\obj\Debug\net6.0\LoggerServices.csproj.AssemblyReference.cache
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\obj\Debug\net6.0\LoggerServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\obj\Debug\net6.0\LoggerServices.AssemblyInfoInputs.cache
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\obj\Debug\net6.0\LoggerServices.AssemblyInfo.cs
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\obj\Debug\net6.0\LoggerServices.csproj.CoreCompileInputs.cache
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\obj\Debug\net6.0\LoggerServices.csproj.CopyComplete
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\obj\Debug\net6.0\LoggerServices.dll
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\obj\Debug\net6.0\refint\LoggerServices.dll
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\obj\Debug\net6.0\LoggerServices.pdb
+C:\Users\54346\Documents\Programacion\SitioPeliculas\Backend\Api\LoggerServices\obj\Debug\net6.0\ref\LoggerServices.dll

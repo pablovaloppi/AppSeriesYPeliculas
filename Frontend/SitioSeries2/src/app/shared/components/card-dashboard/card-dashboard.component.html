@@ -1,0 +1,11 @@
+<div class="card-content" [ngStyle]="{'background-color': backgroundColor}">
+    <div class="header">
+        <h2>{{title}}</h2>
+    </div>
+    <div class="body">
+        <span>{{count}}</span>
+    </div>
+    <div class="footer">
+        <a routerLink="{{dirLink}}">{{linkText}} <mat-icon fontIcon="arrow_right"></mat-icon></a>
+    </div>
+</div>

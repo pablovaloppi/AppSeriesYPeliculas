@@ -1,0 +1,93 @@
+.content{
+    width: 98.5vw;
+    height: 610px;
+    position: relative;
+    .image{
+        width: 100%;
+        position: absolute;
+        img{
+            width: 100%;
+            object-fit: contain;
+        }
+        .img-decoration{
+            position: absolute;
+            width: 100%;
+            height:100%;
+            left: 0;
+            background: linear-gradient(0deg, rgba(8,27,39,1) 5%, rgba(0,0,0,0.0984768907563025) 61%);
+        }
+    }
+    
+    .info{
+        left: 10%;
+        top: 5%;
+        width: 40%;
+        position: absolute;
+        
+        .puntuacion{
+            display: inline;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background-color: var(--fontColorSecundary);
+            span{
+                font-weight: 500;
+                font-size: 20px;
+            }       
+        }
+        .title{
+            h1{
+                font-weight: 600;
+                font-size: 5rem;
+                line-height: initial;
+            }
+        }
+       
+        .sub{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 20px;
+            .stars{
+                display: flex;
+                flex-direction: row;
+                align-items: center;     
+            }
+            mat-icon{
+                font-size: 1rem;
+                color: var(--fontColorSecundary);
+            }
+            .category{
+                display: flex;
+                align-items: center;
+                a{
+                    text-decoration:  none;
+                    transition: all 0.3s ease;
+                }
+                a:hover{
+                    color: var(--fontColorSecundary);
+                }
+            }
+            .date{
+                color: var(--fontColorPrimary);
+                display: flex;
+                align-items: center;
+            }
+        }
+        .description{
+            color: var(--fontColorPrimary);
+
+            padding-bottom: 20px;
+            p{
+                font-size: 1rem;
+                line-height: 160%;
+            }
+        }
+        .button{
+            button{
+                width: auto;
+            }
+        }
+    }
+
+}
+

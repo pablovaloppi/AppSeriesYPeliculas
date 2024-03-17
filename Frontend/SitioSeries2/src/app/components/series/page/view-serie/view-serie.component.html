@@ -1,0 +1,68 @@
+<div class="serie-container">
+    <div class="header">
+        <div class="image">
+            <img src="{{serie?.imgPortada}}" alt="">
+        </div>
+        <div class="info-header">
+            <div class="title-serie">
+                <h2>{{serie?.titulo | titlecase}}</h2>
+                <mat-icon type="button" (click)="onFavorito()"
+                    [ngClass]="{'favorito':favorita$ | async,'favorito-active':favorita$ | async}" class="favoritos"
+                    fontIcon="favorite"></mat-icon>
+            </div>
+
+            <div class="puntucacion">
+                <p>{{serie?.puntuacion}}</p>
+                <ul>
+                    <li><mat-icon class="icon" fontIcon="star"></mat-icon></li>
+                    <li><mat-icon class="icon" fontIcon="star"></mat-icon></li>
+                    <li><mat-icon class="icon" fontIcon="star"></mat-icon></li>
+                    <li><mat-icon class="icon" fontIcon="star"></mat-icon></li>
+                </ul>
+            </div>
+            <div class="categories">
+                <p>Categoria: {{serie?.nombreCategoria}}</p>
+            </div>
+
+        </div>
+        <div class="back" routerLink="/series">
+            <mat-icon fontIcon="arrow_back"></mat-icon>
+            <span>Retroceder</span>
+        </div>
+
+    </div>
+
+    <div class="content-info">
+        <div class="divisor"></div>
+        <h3 class="info">Info</h3>
+        <div class="divisor"></div>
+        <div class="info-serie">
+            <h4>Descripcion</h4>
+            <p>{{serie?.descripcion | titlecase}}</p>
+            <p>Titulo: {{serie?.titulo| titlecase}}</p>
+            <p>Año: {{serie?.anio}}</p>
+            <p>Pais: {{serie?.paisId}} </p>
+        </div>
+    </div>
+    <div class="comentarios">
+        <div class="title">
+            <h2>Comentarios</h2>
+        </div>
+        <div class="lista-comentarios">
+            <app-comentario *ngFor="let comentario of listaComentarios"
+            [nombreUsuario]="comentario.nombreUsuario"
+            [fecha]="comentario.fecha | date"
+            [imagenUser]="comentario.imagenUser"
+            [comentario]="comentario.contenido"
+            ></app-comentario>
+        </div>
+        <div class="nuevo-comentario">
+            <form (submit)="onAgregarComentario()" [formGroup]="formComentario">
+                <textarea class="content" name="" id="" placeholder="Comentario..." formControlName="contenido"></textarea>
+                <div class="button">
+                    <button type="submit">Enviar Comentario</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

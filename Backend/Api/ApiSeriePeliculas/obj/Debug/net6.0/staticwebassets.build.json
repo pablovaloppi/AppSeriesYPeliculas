@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Ln4s9IgqIuSrf88ghJYHQ+j5UZg8N0Bg9ONC0Q93gJg=",
+  "Source": "ApiSeriePeliculas",
+  "BasePath": "_content/ApiSeriePeliculas",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

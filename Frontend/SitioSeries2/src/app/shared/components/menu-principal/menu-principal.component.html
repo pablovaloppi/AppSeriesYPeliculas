@@ -1,0 +1,34 @@
+<nav class="menu">
+  <div class="content-right">
+    <div routerLink="/home" class="title">
+      <mat-icon class="icon" fontIcon="movie"></mat-icon>
+      <span>Serial</span>Viewer
+    </div>
+  </div>
+  <div class="links">
+    <ul>
+      <li><a routerLinkActive="linkActive" routerLink="home">Home</a></li>
+      <li><a routerLinkActive="linkActive" routerLink="recientes">Recientes</a></li>
+      <li><a routerLinkActive="linkActive" routerLink="series">Series</a></li>
+      <li><a routerLinkActive="linkActive" routerLink="peliculas">Peliculas</a></li>
+    </ul>
+  </div>
+  <div class="login">
+    <div *ngIf="isInLogin | async" class="perfil" [matMenuTriggerFor]="menu">
+      <div  class="imgPerfil">
+        <img src="{{userImgPerfil$ | async}}" alt="">  
+      </div>
+      <span ><mat-icon class="icon" fontIcon="expand_more"></mat-icon></span>
+      <mat-menu #menu="matMenu">
+        <a *ngIf="isUserAdmin$ | async" mat-menu-item routerLink="admin">Admin Panel</a>
+        <a mat-menu-item routerLink="usuario">Mi Perfil</a>
+      </mat-menu>
+      <button (click)="logout()">Logout</button>
+    </div>
+    <div class="buttons" *ngIf="!(isInLogin | async)">
+      <button (click)="openLoginDialog()">LOGIN</button>
+      <button (click)="openRegisterDialog()">REGISTER</button>
+    </div>
+ 
+  </div>
+</nav>

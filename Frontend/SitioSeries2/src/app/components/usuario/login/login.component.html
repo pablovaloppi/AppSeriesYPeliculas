@@ -1,0 +1,28 @@
+<div class="content-login">
+  <h2 class="title">Iniciar </h2>
+  <form (ngSubmit)="onLogin()" class="form" [formGroup]="loginGroup">
+    <span *ngIf="error" class="error-message">El usuario o la contraseña son incorrectos.</span>
+    <div class="username">
+      <input [ngClass]="{'input':!loginGroup.controls['username'].errors?.['required'],'input-error':loginGroup.controls['username'].errors?.['required']}" placeholder="Username"
+        type="text" formControlName="username">
+      <span *ngIf="loginGroup.controls['username'].errors?.['required']" class="error-message">El campo es requerido.</span>
+    </div>
+    <div class="password">
+      <input [ngClass]="{'input':!loginGroup.controls['password'].errors?.['required'],'input-error':loginGroup.controls['password'].errors?.['required']}" placeholder="Password"
+        type="password" formControlName="password">
+        <span *ngIf="loginGroup.controls['password'].errors?.['required']" class="error-message">El campo es requerido.</span>
+    </div>
+    <div class="forgot">
+      <a href="">Forgot your password?</a>
+    </div>
+    <div class="buttons">
+      <button  [disabled]="loginGroup.invalid" [ngClass]="{'button-yellow': !loginGroup.invalid, 'button-disabled': loginGroup.invalid}" type="submit">Iniciar</button>
+      <button class="cancelar" type="button" (click)="close()">Cancelar</button>
+    </div>
+  </form>
+</div>
+
+
+<div *ngIf="!isConnected" class="disable-container">
+  <mat-spinner class="spinner"></mat-spinner>
+</div>

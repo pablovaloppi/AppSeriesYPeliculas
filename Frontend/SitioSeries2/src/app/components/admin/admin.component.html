@@ -1,0 +1,16 @@
+<div class="admin-panel-container">
+
+    <div class="sidenav">
+        <ul>
+            <li routerLink="dashboard" routerLinkActive="active"><mat-icon fontIcon="dashboard"></mat-icon> Dashboard</li>
+            <li routerLink="series" routerLinkActive="active"><mat-icon fontIcon="video_library"></mat-icon> Series</li>
+            <li><mat-icon fontIcon="movie"></mat-icon>Peliculas</li>
+            <li routerLink="categorias" routerLinkActive="active"><mat-icon fontIcon="category"></mat-icon>Categorias</li>
+            <li><mat-icon fontIcon="group"></mat-icon>Usuarios</li>
+            <li><mat-icon fontIcon="settings"></mat-icon>Settings</li>
+        </ul>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

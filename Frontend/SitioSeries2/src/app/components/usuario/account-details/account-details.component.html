@@ -1,0 +1,53 @@
+<div class="content-details">
+    <h1 class="title">User Details</h1>
+    <span *ngIf="errorDetails" class="error-message">Ha ocurrido un error, intenta nuevamente.</span>
+    <span *ngIf="succesDetails" class="succes-message">La datios se cambiaron con exito!.</span>
+    <form (submit)="onUpdate()" class="form" [formGroup]="detailsForm">
+        <div class="firstname">
+            <input
+                [ngClass]="{'input':!detailsForm.controls['nombre'].errors?.['required'],'input-error':detailsForm.controls['nombre'].errors?.['required']}"
+                type="text" placeholder="First Name" formControlName="nombre">
+            <span *ngIf="detailsForm.controls['nombre'].errors?.['required']" class="error-message">El campo es
+                requerido.</span>
+        </div>
+        <div class="lastname">
+            <input
+                [ngClass]="{'input':!detailsForm.controls['apellido'].errors?.['required'],'input-error':detailsForm.controls['apellido'].errors?.['required']}"
+                type="text" placeholder="Last Name" formControlName="apellido">
+            <span *ngIf="detailsForm.controls['apellido'].errors?.['required']" class="error-message">El campo es
+                requerido.</span>
+        </div>
+        <div class="email-container">
+            <input
+                [ngClass]="{'input':!detailsForm.controls['email'].errors?.['required'],'input-error':detailsForm.controls['email'].errors?.['required'] || detailsForm.controls['email'].errors?.['email']}"
+                type="email" placeholder="Email" formControlName="email">
+            <span *ngIf="detailsForm.controls['email'].errors?.['required']" class="error-message">El campo es
+                requerido.</span>
+            <span *ngIf="detailsForm.controls['email'].errors?.['email']" class="error-message">El email es
+                invalido.</span>
+        </div>
+        <div class="edad-container">
+            <input
+                [ngClass]="{'input':!detailsForm.controls['edad'].errors?.['required'],'input-error':detailsForm.controls['edad'].errors?.['required']}"
+                type="number" placeholder="Edad" formControlName="edad">
+            <span *ngIf="detailsForm.controls['edad'].errors?.['required']" class="error-message">El campo es
+                requerido.</span>
+
+        </div>
+        <div class="direccion-container">
+            <input
+                [ngClass]="{'input':!detailsForm.controls['direccion'].errors?.['required'],'input-error':detailsForm.controls['direccion'].errors?.['required']}"
+                type="text" placeholder="Address" formControlName="direccion">
+            <span *ngIf="detailsForm.controls['direccion'].errors?.['required']" class="error-message">El campo es
+                requerido.</span>
+
+        </div>
+        <div class="buttons">
+            <button [disabled]="detailsForm.invalid"
+                [ngClass]="{'button-yellow': !detailsForm.invalid, 'button-disabled': detailsForm.invalid}"
+                type="submit">Guardar Cambios</button>
+            <button type="reset">Resetear Datos</button>
+        </div>
+
+    </form>
+</div>

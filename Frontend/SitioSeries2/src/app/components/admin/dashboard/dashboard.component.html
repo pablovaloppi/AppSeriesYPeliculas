@@ -1,0 +1,27 @@
+<div class="container-dash">
+    <app-card-dashboard
+        [title]="cardSeries?.title"
+        [count]="cardSeries?.count"
+        [linkText]="cardSeries?.linkText"
+        [backgroundColor]="cardSeries?.color"
+        [dirLink]="cardSeries?.dirLink"
+    ></app-card-dashboard>
+    <app-card-dashboard
+        title="Peliculas Totales"
+        count=20
+        [linkText]="cardSeries?.linkText"
+        backgroundColor="#65ab10"
+    ></app-card-dashboard>
+    <app-card-dashboard
+        [title]="cardCategories?.title"
+        [count]="cardCategories?.count"
+        [linkText]="cardCategories?.linkText"
+        [backgroundColor]="cardCategories?.color"
+    ></app-card-dashboard>
+    <app-card-dashboard
+        [title]="cardUsers?.title"
+        [count]="cardUsers?.count"
+        [linkText]="cardUsers?.linkText"
+        [backgroundColor]="cardUsers?.color"
+    ></app-card-dashboard>
+</div>

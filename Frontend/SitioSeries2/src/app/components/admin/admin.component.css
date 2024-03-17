@@ -1,0 +1,41 @@
+.admin-panel-container{
+    height: auto;
+    display: flex;
+    background-color: #cccccc;
+    .sidenav{
+        width: 120px;
+        position:sticky;
+        background-color: #333;;
+        ul{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            li{
+                color: var(--fontColorPrimary);
+                height: 80px;
+                margin: 0;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.3s ease;
+            }
+            li:hover, .active{
+                background: linear-gradient(251deg, #00000073, transparent);
+                cursor: pointer;
+                color: var(--fontColorSecundary);
+            }
+        }        
+    }
+    
+    .content{
+        margin: 2%;
+        background-color: rgb(255, 255, 255) ;
+        filter: drop-shadow(0px 0px 6px #a0a0a0cc);
+        width: 100%;
+    
+        
+    }
+}
+

@@ -1,0 +1,123 @@
+.mat-mdc-header-cell {
+  color: black !important;
+  font-weight: 700;
+}
+
+.mat-mdc-cell {
+  color: black;
+}
+
+
+.ampliar {
+  transition: font 0.3s linear;
+}
+
+.ampliar:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  .input{
+    margin: 5px 0px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+tr.detail-row {
+  height: 0;
+}
+
+tr.element-row:not(.expanded-row):hover {
+  background: whitesmoke;
+  cursor: pointer;
+}
+
+tr.element-row:not(.expanded-row):active {
+  background: #efefef;
+}
+
+.element-row td {
+  border-bottom-width: 0;
+}
+
+.element-detail {
+  overflow: hidden;
+  display: flex;
+  
+}
+
+.element-diagram {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  .element-titulo {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+}
+
+.more-info{
+  span{
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  .button-delete, .button-edit {
+    position: relative;
+    border: 2px solid red;
+    padding: 8px 12px;
+    color: red;
+    transition: background color 0.2s ease;
+  }
+
+  .button-edit{
+    border: 2px solid #74a8cf;
+    color: #74a8cf;
+  }
+  .button-edit:hover{
+    background-color: #74a8cf;
+    color: white;
+  }
+  .button-delete:hover{
+    background-color: red;
+    color: black;
+  }
+
+}
+
+.element-anio,
+.element-capitulo,
+.element-description,
+.element-titulo,
+.element-temporada {
+  color: black;
+}
+
+.element-imgPortada {
+  width: 120px; 
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.element-description-attribution {
+  opacity: 0.5;
+}
+

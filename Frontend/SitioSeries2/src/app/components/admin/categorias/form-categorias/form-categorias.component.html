@@ -1,0 +1,21 @@
+<H1 class="header" *ngIf="!isEdit">Agregar nueva serie</H1>
+<H1 class="header" *ngIf="isEdit">Editar serie</H1>
+<div class="container">
+
+    <form (ngSubmit)="onNewOrEditSerie()" class="form" [formGroup]="formCategoria">
+        <div class="nombre">
+            <input [ngClass]="{'input':!isRequired('nombre'),'input-error':isRequired('nombre')}" type="text"
+                placeholder="Nombre categoria" formControlName="nombre">
+            <span *ngIf="isRequired('nombre')" class="error-message">El campo es requerido.</span>
+        </div>
+        <div class="buttons">
+            <button *ngIf="isEdit" [disabled]="formCategoria.invalid"
+                [ngClass]="{'button-yellow': !formCategoria.invalid, 'button-disabled': formCategoria.invalid}"
+                type="submit">Editar</button>
+            <button *ngIf="!isEdit"[disabled]="formCategoria.invalid"
+                [ngClass]="{'button-yellow': !formCategoria.invalid, 'button-disabled': formCategoria.invalid}"
+                type="submit">Agregar</button>
+            <button class="button-black" type="reset">Borrar</button>
+        </div>
+    </form>
+</div>

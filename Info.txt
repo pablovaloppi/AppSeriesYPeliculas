@@ -1,0 +1,79 @@
+necesito un menu para seleccionar Recientes, Series, Peliculas
+
+	pagina principal 
+ultimos aportes slider( ultimas subidas en series y peluculas)
+series recientes slider
+peliculas reciente slider
+
+
+pagina info (serie pelicula)
+
+Titulo
+Valoracion
+Categoria
+---------
+Sinopsis
+info
+	titulo
+	año
+	pais
+	Duracion
+	Categiria
+	Link descarga
+---
+slider con imagenes 
+
+base de datos
+	categoria
+	pais
+	serie
+	pelicula
+	tipo_usuario
+	usuario
+
+
+Frontend
+
+PRINCIPAL
+	Home
+		Imagen prinicipa de serie o pelicula mas nueva
+		sliders
+			agregado recientemenete
+			series mas nuevas
+			peliculas mas nuevas
+	recientes
+		visor de agregados recientemente de peliculas y series
+	series
+		selector de categoria
+		visor de series por categorias
+	peliculas
+		selector de categoria
+		visor de series por categorias
+	usuario
+		- boton perfil
+			-menu
+				admin panel			
+		series favoritas
+		peliculas favorita
+		cambiar contraseña
+		
+ADMIN PANEL
+	Home
+		Carteles
+			peliculas agregadas
+			Series agregadas
+			Comentarios
+			programar tareas	
+	Agregar/editar serie
+	agrgar/editar pelicula
+	agregar/editar categoria 
+
+
+extras
+		contenido por año
+		comentarios de pelicula o serie
+		poder darle a favoritos y guardarlo
+		puntuar pelicula serie
+		pelicula / serie mas vista
+		compartir en redes
+			

@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="content-viewer">
+        <app-card class="card" *ngFor="let item of list"
+            routerLink="/series/{{item.id}}"
+            [title]="item.titulo"
+            [img]="item.imgPortada"
+            [puntuacion]="item.puntuacion"></app-card>
+    </div>
+</div>

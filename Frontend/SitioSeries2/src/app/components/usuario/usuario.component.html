@@ -1,0 +1,34 @@
+<!-- <nav *ngIf="isInLogin | async"  mat-tab-nav-bar [tabPanel]="tabPanel">
+      <a mat-tab-link  routerLink="series" routerLinkActive="active" >Series favoritas</a>
+      <a mat-tab-link  routerLink="pelli" routerLinkActive="active" >Peliculas favoritas</a>
+      <a mat-tab-link  routerLink="edit" routerLinkActive="active" >Editar perfil</a>
+  </nav> -->
+
+<div class="container-profile">
+  <div class="sidenav">
+    <div class="imagen">
+      <img src="{{userImgPerfil$ | async}}" alt="">
+      <label for="inputTag">
+        <input #file id="inputTag" accept="image/png,image/jpeg" type="file" (change)="uploadFile(file.files)" />
+        <button mat-fab color="" class="editImg" type="button" (click)="file.click()"><mat-icon
+            fontIcon="edit"></mat-icon></button>
+      </label>
+    </div>
+    <nav class="links">
+      <a routerLink="/usuario/dashboard" routerLinkActive="active"><mat-icon fontIcon="home"></mat-icon> Dashboard</a>
+      <a routerLink="/usuario/account-details" routerLinkActive="active"><mat-icon fontIcon="person"></mat-icon>Account
+        Details</a>
+      <a routerLink="/usuario/change-password" routerLinkActive="active"><mat-icon fontIcon="key"></mat-icon>Change
+        Password</a>
+      <a (click)="onLogout()"><mat-icon fontIcon="logout"></mat-icon>Logout</a>
+    </nav>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+
+<!-- <mat-tab-nav-panel #tabPanel>
+    
+  </mat-tab-nav-panel> -->
