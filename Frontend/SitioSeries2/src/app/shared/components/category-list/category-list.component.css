@@ -1,0 +1,26 @@
+.media__categories {
+    width: 100%;
+    .media__category-list {
+      margin-top: 10px;
+      padding: 0px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      overflow-x: auto;
+      .media__category {
+        border: 1px solid var(--secondary-accent);
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 20px;
+        flex-shrink: 0;
+      }
+      .media__category:hover{
+        cursor: pointer;
+      }
+
+      .category--active {
+        background-color: var(--secondary-accent);
+      }
+    }
+  }

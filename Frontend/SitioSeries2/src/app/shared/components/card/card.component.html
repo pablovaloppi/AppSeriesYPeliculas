@@ -1,10 +1,19 @@
-<div class="card" >
-    <div class="header">
-        <mat-icon class="icon" fontIcon="star"></mat-icon>
-        <p>{{puntuacion}}</p>
-    </div>
-    <img src={{img}} alt="">
-    <div class="footer">
-        <p>{{title}}</p>
-    </div>
-</div>
+<!-- <div class="card">
+  <div class="header">
+    <mat-icon class="icon" fontIcon="star"></mat-icon>
+    <p>{{ puntuacion }}</p>
+  </div>
+  <img src="{{ img }}" alt="" />
+  <div class="footer">
+    <p>{{ title }}</p>
+  </div>
+</div> -->
+
+<li class="media__item">
+  <img
+    src="{{ img }}"
+    alt=""
+    class="media__item-img"
+  />
+  <span class="media__item-title">{{ title }}</span>
+</li>

@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="content-viewer">
         <app-card class="card" *ngFor="let item of list"
             routerLink="/series/{{item.id}}"
@@ -6,4 +6,12 @@
             [img]="item.imgPortada"
             [puntuacion]="item.puntuacion"></app-card>
     </div>
-</div>
+</div> -->
+
+<ul class="page__list trending">
+    <li class="page__item" *ngFor="let item of list" routerLink="/series/{{item.id}}">
+      <img src={{item?.imgPortada}} alt="" class="page__item-img" />
+      <span class="page__item-title">{{item.titulo}}</span>
+      <div class="page__item-score">9.5</div>
+    </li>
+  </ul> 

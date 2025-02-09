@@ -1,0 +1,33 @@
+.logout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 25px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: var(--primary-accent);
+  .logout__title {
+    font-size: 26px;
+    font-weight: 900;
+  }
+
+  .logout__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+  }
+  .button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .logout {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

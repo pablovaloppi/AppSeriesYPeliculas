@@ -12,7 +12,8 @@ import { InputValidation } from 'src/app/shared/utils/input-validation';
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.css'],
+  styleUrls: ['register-form.component.css'],
+  
 })
 export class RegisterFormComponent implements OnInit {
 
@@ -25,7 +26,6 @@ export class RegisterFormComponent implements OnInit {
     private readonly paisService: PaisService,
     private snackBar: MatSnackBar,
     private readonly router: Router,
-    private diologRef: MatDialogRef<RegisterFormComponent>,
     ) { 
     }
 
@@ -72,14 +72,8 @@ export class RegisterFormComponent implements OnInit {
       complete: () => {
         this.isComplete = true;
         this.snackBar.open("Se ha registrado correctamente.", 'X', { duration: 3000 });
-        this.closeWindow();
       }
     })
 
   }
-
-  closeWindow() {
-    this.diologRef.close();
-  }
- 
 }

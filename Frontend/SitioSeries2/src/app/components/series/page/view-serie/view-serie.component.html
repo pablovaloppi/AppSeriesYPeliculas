@@ -1,68 +1,133 @@
-<div class="serie-container">
-    <div class="header">
-        <div class="image">
-            <img src="{{serie?.imgPortada}}" alt="">
-        </div>
-        <div class="info-header">
-            <div class="title-serie">
-                <h2>{{serie?.titulo | titlecase}}</h2>
-                <mat-icon type="button" (click)="onFavorito()"
-                    [ngClass]="{'favorito':favorita$ | async,'favorito-active':favorita$ | async}" class="favoritos"
-                    fontIcon="favorite"></mat-icon>
-            </div>
-
-            <div class="puntucacion">
-                <p>{{serie?.puntuacion}}</p>
-                <ul>
-                    <li><mat-icon class="icon" fontIcon="star"></mat-icon></li>
-                    <li><mat-icon class="icon" fontIcon="star"></mat-icon></li>
-                    <li><mat-icon class="icon" fontIcon="star"></mat-icon></li>
-                    <li><mat-icon class="icon" fontIcon="star"></mat-icon></li>
-                </ul>
-            </div>
-            <div class="categories">
-                <p>Categoria: {{serie?.nombreCategoria}}</p>
-            </div>
-
-        </div>
-        <div class="back" routerLink="/series">
-            <mat-icon fontIcon="arrow_back"></mat-icon>
-            <span>Retroceder</span>
-        </div>
-
+<header class="header__page">
+    <figure class="header__figure">
+      <img src="{{serie?.imgPortada}}" alt="" class="header__img" />
+    </figure>
+    <div class="header__buttons">
+      <button class="header__button" routerLink="">
+        <img src="../../../../../assets/images/icon-arrow.svg" alt="" class="button__img" />
+      </button>
+      <button class="header__button">
+        <img src="../../../../../assets/images/icon-cast.svg" alt="" class="button__img" />
+      </button>
     </div>
+  </header>
 
-    <div class="content-info">
-        <div class="divisor"></div>
-        <h3 class="info">Info</h3>
-        <div class="divisor"></div>
-        <div class="info-serie">
-            <h4>Descripcion</h4>
-            <p>{{serie?.descripcion | titlecase}}</p>
-            <p>Titulo: {{serie?.titulo| titlecase}}</p>
-            <p>Año: {{serie?.anio}}</p>
-            <p>Pais: {{serie?.paisId}} </p>
-        </div>
+<section class="info__page">
+    <div class="info__header">
+      <h1 class="info__title">{{serie?.titulo | titlecase}}</h1>
+      <div class="info__button-actions">
+        <button class="info__button" type="button" (click)="onFavorito()">
+          <img *ngIf="favorita$ | async"
+            src="../../../../../assets/images/icon-bookmark-red.svg"
+            alt=""
+            class="info__buttom-img"
+          />
+          <img *ngIf="!(favorita$ | async)"
+            src="../../../../../assets/images/icon-bookmark.svg"
+            alt=""
+            class="info__buttom-img"
+          />
+        </button>
+        <button class="info__button">
+          <img
+            src="../../../../../assets/images/icon-share.svg"
+            alt=""
+            class="info__buttom-img"
+          />
+        </button>
+      </div>
     </div>
-    <div class="comentarios">
-        <div class="title">
-            <h2>Comentarios</h2>
+    <div class="info__middle">
+      <div class="info__year">
+        <div class="info__score">
+          <img src="../../../../../assets/images/icon-star-half.svg" alt="" class="info__star" />
+          <span class="info__score-text">{{serie?.puntuacion}}</span>
+          <img src="../../../../../assets/images/icon-chevron-right.svg" alt="" />
+          <span class="info__score-year">{{serie?.anio}}</span>
         </div>
-        <div class="lista-comentarios">
-            <app-comentario *ngFor="let comentario of listaComentarios"
-            [nombreUsuario]="comentario.nombreUsuario"
-            [fecha]="comentario.fecha | date"
-            [imagenUser]="comentario.imagenUser"
-            [comentario]="comentario.contenido"
-            ></app-comentario>
-        </div>
-        <div class="nuevo-comentario">
-            <form (submit)="onAgregarComentario()" [formGroup]="formComentario">
-                <textarea class="content" name="" id="" placeholder="Comentario..." formControlName="contenido"></textarea>
-                <div class="button">
-                    <button type="submit">Enviar Comentario</button>
-                </div>
-            </form>
-        </div>
+      </div>
+      <div class="info__country">
+        <ul class="info__list">
+          <li class="info__item">13+</li>
+          <li class="info__item">United States</li>
+          <li class="info__item">Subtitle</li>
+        </ul>
+      </div>
     </div>
-</div>
+    <div class="info__play">
+      <button class="button__play">
+        <img
+          src="../../../../../assets/images/icon-play.svg"
+          alt=""
+          class="button__play-img"
+        />Play
+      </button>
+      <button class="button__play button-empty-bg">
+        <img
+          src="../../../../../assets/images/icon-download.svg"
+          alt=""
+          class="button__play-img"
+        />Download
+      </button>
+    </div>
+  </section>
+
+  <section class="description__page">
+    <div class="description__genre page--subtitle">
+      <span class="genre__text">Genre:</span>
+      <ul class="genre__list">
+        <li class="genre__item">{{serie?.nombreCategoria}}</li>
+        <!-- <li class="genre__item">Cartoon</li> -->
+      </ul>
+    </div>
+    <p class="description__paragraph">
+        {{serie?.descripcion | titlecase}}
+    </p>
+  </section>
+
+  <section class="cast__page">
+    <div class="cast__header">
+      <h2 class="page--subtitle">Cast</h2>
+      <a href="#" class="cast__see-more">See more</a>
+    </div>
+    <ul class="cast__list">
+      <li class="cast__item">
+        <img src="../../../../../assets/images/avatar.webp" alt="" class="cast__item-img" />
+        <span class="cast__item-name">Nicolas</span>
+        <span class="cast__item-name">Cage</span>
+        <span class="cast__item-character">Grug</span>
+      </li>
+      <li class="cast__item">
+        <img src="../../../../../assets/images/avatar.webp" alt="" class="cast__item-img" />
+        <span class="cast__item-name">Chris</span>
+        <span class="cast__item-name">Sanders</span>
+        <span class="cast__item-character">Belt</span>
+      </li>
+      <li class="cast__item">
+        <img src="../../../../../assets/images/avatar.webp" alt="" class="cast__item-img" />
+        <span class="cast__item-name">Ryan</span>
+        <span class="cast__item-name">Reynolds</span>
+        <span class="cast__item-character">Buy</span>
+      </li>
+      <li class="cast__item">
+        <img src="../../../../../assets/images/avatar.webp" alt="" class="cast__item-img" />
+        <span class="cast__item-name">Clark</span>
+        <span class="cast__item-name">Duke</span>
+        <span class="cast__item-character">Thurik</span>
+      </li>
+      <li class="cast__item">
+        <img src="../../../../../assets/images/avatar.webp" alt="" class="cast__item-img" />
+        <span class="cast__item-name">Emma</span>
+        <span class="cast__item-name">Stone</span>
+        <span class="cast__item-character">Eap</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="more__page">
+    <div class="more__tab">
+      <a  class="tab__link link--active">Trailers</a>
+      <a  class="tab__link">More like This</a>
+      <a  class="tab__link">Comments</a>
+    </div>
+  </section>

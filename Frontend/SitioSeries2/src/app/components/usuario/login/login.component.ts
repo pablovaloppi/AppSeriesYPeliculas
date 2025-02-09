@@ -1,20 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Login } from 'src/app/core/models/login';
 import { User } from 'src/app/core/models/user';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  standalone: true,
-  imports: [ReactiveFormsModule, MatIconModule, MatTooltipModule, CommonModule, MatProgressSpinnerModule,]
 })
 export class LoginComponent implements OnInit {
   loginGroup!: FormGroup;
@@ -24,29 +20,42 @@ export class LoginComponent implements OnInit {
 
   constructor(private readonly fb: FormBuilder,
     private readonly authService: AuthService,
-    private dialogRef: MatDialogRef<LoginComponent>,
+    private readonly router: Router
   ) {
 
   }
 
   ngOnInit(): void {
-    this.loginGroup = this.fb.group({
-      username: ['', [Validators.required]],
-      password: ['', Validators.required],
-    });
+    // this.loginGroup = this.fb.group({
+    //   username: ['', [Validators.required]],
+    //   password: ['', Validators.required],
+    // });
+
+    this.loginGroup = new FormGroup({
+      username: new FormControl(''),
+      password: new FormControl(''),
+    })
   }
+  get usernameControl(): FormControl {
+    return this.loginGroup.get('username') as FormControl;
+  }
+
+  get passwordControl(): FormControl {
+    return this.loginGroup.get('password') as FormControl;
+  }
+
 
   onLogin() {
     let login: Login = { username: this.loginGroup.value['username'], password: this.loginGroup.value['password'] };
     this.error = false;
     this.isConnected = false;
-    // El setTimeout no es necesario, solamente esta para ver el spinner al momento de logear
-    setTimeout(() => {
+    console.log(login);
+
       this.authService.login(login).subscribe({
         next: resp => {
-          
+          console.log(resp);
           this.authService.saveLoginInLocalStorage(resp.usuario, resp.token);
-          this.close();
+          this.router.navigateByUrl("/usuario");
         },
         error: (error) =>{
           this.error = true;
@@ -56,13 +65,8 @@ export class LoginComponent implements OnInit {
           this.isConnected = true;
         }
       })
-    }, 2000);
+    }
     
   }
 
-  close() {
-    
-    this.dialogRef.close();
-  }
 
-}

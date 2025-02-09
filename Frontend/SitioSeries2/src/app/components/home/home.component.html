@@ -1,5 +1,5 @@
 <div class="content">
-    <app-img-principal
+  <!-- <app-img-principal
         title="Game Of Thrones"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aut vel necessitatibus, mollitia
         praesentium voluptate culpa nobis labore possimus incidunt. Modi officiis amet laborum dolore nostrum ab et,
@@ -12,13 +12,23 @@
         categoria="Aventuras"
         img="../../../../assets/images/dargon.jpg"
         linkButton="/series"
-    ></app-img-principal>
-   <app-carrousel
-        [countList]=20
-        title="Agregados recientemente"
-        linkVerMas="/recientes"
-    ></app-carrousel>
-     <!-- <app-carrousel
+    ></app-img-principal> -->
+  <app-carrousel
+    [countList]="20"
+    title="Agregados recientemente"
+    linkVerMas="/recientes"
+  ></app-carrousel>
+  <app-media-viewer
+    title="Trending Now"
+    linkVerMas="/series"
+    [trending] = "true"
+    [showCategories]="false"
+  ></app-media-viewer>
+  <app-media-viewer
+    title="Lastest Shows"
+    linkVerMas="/series"
+  ></app-media-viewer>
+  <!-- <app-carrousel
         [countList]=10
         title="Series Nuevas"
         linkVerMas="/series"

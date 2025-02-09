@@ -1,0 +1,10 @@
+<button
+style="background-color: {{backgroundColor}}; color: {{textColor}};"
+class="normal__signin --button"
+[type]="type"
+>
+<ng-container *ngIf="icon !== undefined ">
+    <img src="{{icon}}" alt="">
+</ng-container>
+{{value}}
+</button>

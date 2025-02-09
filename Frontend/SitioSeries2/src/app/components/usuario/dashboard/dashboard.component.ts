@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { SerieFavorita } from 'src/app/core/models/serieFavorita';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { SerieFavoritaService } from 'src/app/core/services/serie-favorita.service';
 

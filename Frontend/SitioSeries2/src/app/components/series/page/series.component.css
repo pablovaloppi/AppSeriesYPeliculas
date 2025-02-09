@@ -1,4 +1,4 @@
-.mat-mdc-tab .mdc-tab__text-label{
+/* .mat-mdc-tab .mdc-tab__text-label{
     color: var(--fontColorPrimary) !important;
 }
 
@@ -20,4 +20,24 @@
     }
     }
     
-}
+} */
+
+.header-page {
+    width: 100%;
+    .page__nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .nav__title {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 14px;
+        gap: 8px;
+      }
+    }
+  }
+  
+
+  

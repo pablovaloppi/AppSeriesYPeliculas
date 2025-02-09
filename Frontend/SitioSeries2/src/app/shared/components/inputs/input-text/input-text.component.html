@@ -1,0 +1,15 @@
+<div class="input__text" [ngClass]="{'input':!control.errors?.['required'],'--error':control.errors?.['required']}">
+    <img
+      [src]="iconLeft"
+      alt=""
+      class="input__img-left"
+    />
+    <input
+      [type]="type"
+      [value]="value"
+      class="input"
+      [placeholder]="placeHolder"
+      [formControl]="control"
+    />
+    <img [src]="iconRight" alt="" class="input__img-right" />
+  </div>

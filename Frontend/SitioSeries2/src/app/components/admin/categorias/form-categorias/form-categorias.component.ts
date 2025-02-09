@@ -51,7 +51,7 @@ export class FormCategoriasComponent extends InputValidation implements OnInit {
   }
 
   onNewOrEditSerie() {
-    let nuevaCategoria:Category = { id: null, nombre: this.formCategoria.value['nombre']};
+    let nuevaCategoria:Category = { id: -1, nombre: this.formCategoria.value['nombre']};
     
     if(this.id !== undefined){
       console.log("Entro");

@@ -1,34 +1,27 @@
-<!-- <nav *ngIf="isInLogin | async"  mat-tab-nav-bar [tabPanel]="tabPanel">
-      <a mat-tab-link  routerLink="series" routerLinkActive="active" >Series favoritas</a>
-      <a mat-tab-link  routerLink="pelli" routerLinkActive="active" >Peliculas favoritas</a>
-      <a mat-tab-link  routerLink="edit" routerLinkActive="active" >Editar perfil</a>
-  </nav> -->
-
-<div class="container-profile">
-  <div class="sidenav">
-    <div class="imagen">
-      <img src="{{userImgPerfil$ | async}}" alt="">
+<header class="account__header" *ngIf="isProfile">
+  <div class="account__button">
+    <button class="account__back" routerLink="{{$backRoute | async}}">
+      <img src="../../../assets/images/icon-arrow.svg" alt="" class="back__img" />
+    </button>
+    <span>{{$titleRoute | async}}</span>
+  </div>
+  <div class="account__info">
+    <figure class="account__figure">
+      <img src="{{userImgPerfil$ | async}}" alt="" class="account__img" />
+    </figure>
+    <button class="account__edit" (click)="file.click()">
       <label for="inputTag">
-        <input #file id="inputTag" accept="image/png,image/jpeg" type="file" (change)="uploadFile(file.files)" />
-        <button mat-fab color="" class="editImg" type="button" (click)="file.click()"><mat-icon
-            fontIcon="edit"></mat-icon></button>
-      </label>
-    </div>
-    <nav class="links">
-      <a routerLink="/usuario/dashboard" routerLinkActive="active"><mat-icon fontIcon="home"></mat-icon> Dashboard</a>
-      <a routerLink="/usuario/account-details" routerLinkActive="active"><mat-icon fontIcon="person"></mat-icon>Account
-        Details</a>
-      <a routerLink="/usuario/change-password" routerLinkActive="active"><mat-icon fontIcon="key"></mat-icon>Change
-        Password</a>
-      <a (click)="onLogout()"><mat-icon fontIcon="logout"></mat-icon>Logout</a>
-    </nav>
+          <input #file id="inputTag" accept="image/png,image/jpeg" type="file" (change)="uploadFile(file.files)" />
+        </label>
+      <img src="../../../assets/images/icon-edit.svg" alt="" class="edit__img" />
+    </button>
   </div>
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
+  <h1 class="account__name">{{userLogued?.user}}</h1>
+  <span class="account__email">{{userLogued?.email}}</span>
+</header>
 
-</div>
+<router-outlet></router-outlet>
 
-<!-- <mat-tab-nav-panel #tabPanel>
-    
-  </mat-tab-nav-panel> -->
+
+
+  

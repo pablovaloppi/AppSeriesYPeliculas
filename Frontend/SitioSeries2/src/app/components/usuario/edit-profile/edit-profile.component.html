@@ -1,0 +1,38 @@
+<section class="edit">
+  <form [formGroup]="formEdit" (ngSubmit)="onUpdate()" class="form-edit">
+    <app-input-text class="input"
+      placeHolder="Nombre"
+      [control]="nameControl"
+      iconLeft=""
+      [value]="userLogued?.nombre"
+    ></app-input-text>
+    <app-input-text class="input"
+      placeHolder="Apellido"
+      iconLeft=""
+      [control]="lastnameControl"
+      [value]="userLogued?.apellido"
+    ></app-input-text>
+    <app-input-text class="input"
+      placeHolder="Email"
+      iconLeft=""
+      type="email"
+      [control]="emailControl"
+      [value]="userLogued?.email"
+    ></app-input-text>
+    <app-input-text class="input"
+      placeHolder="Edad"
+      iconLeft=""
+      type="number"
+      [control]="ageControl"
+      [value]="userLogued?.edad"
+    ></app-input-text>
+    <app-input-text class="input"
+      placeHolder="Direccion"
+      iconLeft=""
+      [control]="addresControl"
+      [value]="userLogued?.direccion"
+    ></app-input-text>
+
+    <app-main-button type="submit" value="UPDATE" class="button"></app-main-button>
+  </form>
+</section>

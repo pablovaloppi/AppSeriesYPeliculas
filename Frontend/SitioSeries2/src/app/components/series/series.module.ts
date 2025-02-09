@@ -10,11 +10,13 @@ import { ViewSerieComponent } from './page/view-serie/view-serie.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ComentarioModule } from 'src/app/shared/components/comentario/comentario.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CategoryListModule } from 'src/app/shared/components/category-list/category-list.module';
+import { ContentViewerModule } from '../../shared/components/content-viewer/content-viewer.module';
+import { InputsModule } from 'src/app/shared/components/inputs/inputs.module';
 
 @NgModule({
   declarations: [
     SeriesComponent,
-    ContentViewerComponent,
     ViewSerieComponent,
   ],
   imports: [
@@ -25,6 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CardModule,
     ComentarioModule,
     ReactiveFormsModule, 
+    ContentViewerModule,
+    CategoryListModule,
+    InputsModule
   ]
 })
 export class SeriesModule { }

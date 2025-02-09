@@ -1,4 +1,4 @@
-<div class="content-register">
+<!-- <div class="content-register">
     <div class="close-window">
         <span (click)="closeWindow()">X</span>
     </div>
@@ -64,4 +64,101 @@
 
 <div *ngIf="!isComplete" class="disable-container">
     <mat-spinner class="spinner"></mat-spinner>
+  </div> -->
+
+<header class="register__header">
+  <button class="register__back">
+    <img
+      src="../../../../assets/images/icon-arrow.svg"
+      alt=""
+      class="back__img"
+    />
+  </button>
+  <figure class="register__figure">
+    <img
+      src="../../../../assets/images/action.jpg"
+      alt=""
+      class="register__img"
+    />
+  </figure>
+  <h1 class="register__title">Create your account</h1>
+</header>
+
+<section class="create-account">
+  <form action="" class="create-account__form">
+    <div class="input__text --error">
+      <img
+        src="../../../../assets/images/icon-send.svg"
+        alt=""
+        class="input__img-left"
+      />
+      <input type="text" class="input" placeholder="Enter your email here" />
+      <img src="" alt="" class="input__img-right" />
+    </div>
+    <div class="input__text">
+      <img
+        src="../../../../assets/images/icon-lock.svg"
+        alt=""
+        class="input__img-left"
+      />
+      <input type="password" class="input" placeholder="Enter Password" />
+      <img
+        src="../../../../assets/images/icon-show.svg"
+        alt=""
+        class="input__img-right"
+      />
+    </div>
+    <div class="input__text">
+      <img
+        src="../../../../assets/images/icon-lock.svg"
+        alt=""
+        class="input__img-left"
+      />
+      <input type="password" class="input" placeholder="Confirm Password" />
+      <img
+        src="../../../../assets/images/icon-show.svg"
+        alt=""
+        class="input__img-right"
+      />
+    </div>
+
+    <div class="input__checkbox">
+      <div class="checkbox">
+        <input type="checkbox" name="" id="" class="checkbox" />
+      </div>
+
+      Remember me
+    </div>
+
+    <div class="normal__signin --button">CREATE ACCOUNT</div>
+  </form>
+  <span class="normal__divisor">OR CONITNUE WITH</span>
+
+  <div class="create__social-boxs">
+    <span class="social__box">
+      <img
+        src="../../../../assets/images/social/icon-facebook.svg"
+        alt=""
+        class="social__img"
+      />
+    </span>
+    <span class="social__box">
+      <img
+        src="../../../../assets/images/social/icon-google.svg"
+        alt=""
+        class="social__img"
+      />
+    </span>
+    <span class="social__box">
+      <img
+        src="../../../../assets/images/social/icon-apple.svg"
+        alt=""
+        class="social__img"
+      />
+    </span>
   </div>
+
+  <span class="register__signup">
+    Have an account? <a class="bold" routerLink="../login">Sign In</a>
+  </span>
+</section>

@@ -1,4 +1,4 @@
-<nav class="menu">
+<!-- <nav class="menu">
   <div class="content-right">
     <div routerLink="/home" class="title">
       <mat-icon class="icon" fontIcon="movie"></mat-icon>
@@ -31,4 +31,43 @@
     </div>
  
   </div>
-</nav>
+</nav> -->
+
+
+<header class="header">
+  <nav class="header__nav">
+    <ul class="nav__list">
+      <li class="nav__item nav-link--active" routerLinkActive="nav-link--active" routerLink="home">
+        <img src="../../../../assets/images/icon-home.svg" alt="" class="nav__icon" /><span
+          class="nav__item-name"
+          >Home</span
+        >
+      </li>
+
+      <li class="nav__item"  routerLinkActive="nav-link--active" routerLink="series">
+        <img src="../../../../assets/images/icon-search.svg" alt="" class="nav__icon" /><span
+          class="nav__item-name"
+          >Series</span
+        >
+      </li>
+      <li class="nav__item"  routerLinkActive="nav-link--active" routerLink="movies">
+        <img src="../../../../assets/images/icon-folder.svg" alt="" class="nav__icon" /><span
+          class="nav__item-name"
+          >Peliculas</span
+        >
+      </li>
+      <li class="nav__item"  routerLinkActive="nav-link--active"routerLink="download">
+        <img src="../../../../assets/images/icon-download.svg" alt="" class="nav__icon" /><span
+          class="nav__item-name"
+          >Donwload</span
+        >
+      </li>
+      <li class="nav__item"  routerLinkActive="nav-link--active" routerLink="usuario">
+        <img src="../../../../assets/images/icon-user.svg" alt="" class="nav__icon" /><span
+          class="nav__item-name"
+          >Profile</span
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

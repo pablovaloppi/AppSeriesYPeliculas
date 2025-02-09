@@ -1,0 +1,13 @@
+<div class="media__categories">
+  <ul class="media__category-list">
+    <!-- <li class="media__category category--active">All</li> -->
+    <li
+      class="media__category"
+      *ngFor="let category of categoryList"
+      (click)="selectCategory(category.id)"
+      [ngClass]="{ 'category--active': selectedCategoryID == category.id }"
+    >
+      {{ category.nombre }}
+    </li>
+  </ul>
+</div>

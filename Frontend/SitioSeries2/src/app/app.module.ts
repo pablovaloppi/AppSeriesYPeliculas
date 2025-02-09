@@ -15,6 +15,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { PetitionInterceptor } from './core/interceptors/petition.interceptor';
 import { CardDashboardComponent } from './shared/components/card-dashboard/card-dashboard.component';
 import { ComentarioComponent } from './shared/components/comentario/comentario.component';
+import { MediaViewerModule } from './shared/components/media-viewer/media-viewer.module';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { ComentarioComponent } from './shared/components/comentario/comentario.c
     MenuPrincipalModule,
     CarrousellModule,
     HttpClientModule,
+    MediaViewerModule
   ],
   providers: [
     {

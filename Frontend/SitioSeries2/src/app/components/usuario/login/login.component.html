@@ -1,28 +1,81 @@
-<div class="content-login">
-  <h2 class="title">Iniciar </h2>
-  <form (ngSubmit)="onLogin()" class="form" [formGroup]="loginGroup">
-    <span *ngIf="error" class="error-message">El usuario o la contraseña son incorrectos.</span>
-    <div class="username">
-      <input [ngClass]="{'input':!loginGroup.controls['username'].errors?.['required'],'input-error':loginGroup.controls['username'].errors?.['required']}" placeholder="Username"
-        type="text" formControlName="username">
-      <span *ngIf="loginGroup.controls['username'].errors?.['required']" class="error-message">El campo es requerido.</span>
+<header class="register__header">
+  <button class="register__back">
+    <img
+      src="../../../../assets/images/icon-arrow.svg"
+      alt=""
+      class="back__img"
+    />
+  </button>
+  <figure class="register__figure">
+    <img
+      src="../../../../assets/images/action.jpg"
+      alt=""
+      class="register__img"
+    />
+  </figure>
+  <h1 class="register__title">Login to your account</h1>
+</header>
+
+<section
+  class="create-account"
+>
+  <form
+    (ngSubmit)="onLogin()"
+    [formGroup]="loginGroup"
+    class="create-account__form"
+  >
+    <app-input-text class="input"
+    placeHolder = "Enter your Email"
+    [control]= "usernameControl"
+     ></app-input-text>
+
+     <app-input-text class="input"
+     placeHolder = "Enter Password"
+     [control]= "passwordControl"
+     type="password"
+     iconLeft="../../../../assets/images/icon-lock.svg"
+     iconRight="../../../../assets/images/icon-show.svg"
+      ></app-input-text>
+ 
+
+    <div class="input__checkbox">
+      <div class="checkbox">
+        <input type="checkbox" name="" id="" class="checkbox" />
+      </div>
+
+      Remember me
     </div>
-    <div class="password">
-      <input [ngClass]="{'input':!loginGroup.controls['password'].errors?.['required'],'input-error':loginGroup.controls['password'].errors?.['required']}" placeholder="Password"
-        type="password" formControlName="password">
-        <span *ngIf="loginGroup.controls['password'].errors?.['required']" class="error-message">El campo es requerido.</span>
-    </div>
-    <div class="forgot">
-      <a href="">Forgot your password?</a>
-    </div>
-    <div class="buttons">
-      <button  [disabled]="loginGroup.invalid" [ngClass]="{'button-yellow': !loginGroup.invalid, 'button-disabled': loginGroup.invalid}" type="submit">Iniciar</button>
-      <button class="cancelar" type="button" (click)="close()">Cancelar</button>
-    </div>
+
+    <app-main-button class="button" type="submit"
+    value = "LOGIN"></app-main-button>
+
   </form>
-</div>
+  <span class="normal__divisor">OR CONITNUE WITH</span>
 
-
-<div *ngIf="!isConnected" class="disable-container">
-  <mat-spinner class="spinner"></mat-spinner>
-</div>
+  <div class="create__social-boxs">
+    <span class="social__box">
+      <img
+        src="../../../../assets/images/social/icon-facebook.svg"
+        alt=""
+        class="social__img"
+      />
+    </span>
+    <span class="social__box">
+      <img
+        src="../../../../assets/images/social/icon-google.svg"
+        alt=""
+        class="social__img"
+      />
+    </span>
+    <span class="social__box">
+      <img
+        src="../../../../assets/images/social/icon-apple.svg"
+        alt=""
+        class="social__img"
+      />
+    </span>
+  </div>
+  <span class="register__signup">
+    Have an account? <a class="bold" routerLink="../register">Sign In</a>
+  </span>
+</section>

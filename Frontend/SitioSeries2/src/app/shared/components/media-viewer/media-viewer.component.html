@@ -1,0 +1,17 @@
+<section class="media">
+  <header class="media__header">
+    <h2 class="media__title">{{title}}</h2>
+    <a href="#" class="media__show-all" routerLink="{{linkVerMas}}">Show all</a>
+  </header>
+  <app-category-list ng *ngIf="showCategories"></app-category-list>
+  
+  <ul [ngClass]="trending ? 'media__list trending' : 'media__list'"  #listItem
+  (mouseover) = "mouseOver()"
+  (mouseout)="mouseOut()"  >
+    <app-card *ngFor="let card of listView"
+    routerLink="/series/{{ card.id }}"
+    [title]="card.titulo"
+    [img]="card.imgPortada"
+    [puntuacion]="card.puntuacion"></app-card>
+  </ul>
+</section>

@@ -3,20 +3,19 @@ import { CanActivateFn, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { AuthService } from '../services/auth.service';
 
-export const userGuard: CanActivateFn = (route, state) => {
+export const userLoguedGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
   const router = inject(Router);
-  let isLogin = false;
 
-  isLogin = authService.hasLogued();
-  // userService.isLogin().subscribe(login =>{ 
-  //   isLogin = login
-  //   console.log(login);
-  // });
+  authService.isInLogin().subscribe(value =>{
+    if(value){
+      //router.navigate(['usuario/account-details']);
+      return false;  // Bloquea el acceso a login
+    }
+    else{
+      return true;
+    }
+  }) 
 
-  // if(!isLogin){
-  //   router.navigateByUrl('home');
-  // }
-
-  return isLogin;
+  return true;
 };

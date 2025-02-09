@@ -1,13 +1,13 @@
 export interface User {
     idUsuario: number;
     user:string;
-    name: string;
-    lastName: string;
+    nombre: string;
+    apellido: string;
     email:string;
-    age: number;
+    edad: number;
     direccion:string;
     idPais: number;
-    accountType: number;
+    tipoUsuarioId: number;
     imgPerfil: string;
 }
 

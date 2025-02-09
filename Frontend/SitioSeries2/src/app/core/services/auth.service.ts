@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, take } from 'rxjs';
 import { AuthenticatedResponse } from '../models/authenticatedResponse';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -17,6 +17,8 @@ export class AuthService {
   private _isLogin = new BehaviorSubject<boolean>(false);
   private _isAdminOrMod = new BehaviorSubject<boolean>(false);
   private _imgPerfil = new BehaviorSubject<string>('');
+  private _userID = new Subject<number>;
+  private _userLogued = new Subject<User>;
 
   private _tokenLocalStore = 'token_access'
   private _nameLocalStore = 'loginInfo'
@@ -39,7 +41,8 @@ export class AuthService {
     let sotrage = { 'userInfo': user, 'token_access': token };
 
     localStorage.setItem('loginInfo', JSON.stringify(sotrage));
-
+    this.setUserLogued(user.id);
+    this._userID.next(user.id);
     this._isLogin.next(true);
     this._imgPerfil.next(user.imgPerfil);
 
@@ -50,13 +53,22 @@ export class AuthService {
     let user = this.getCurrentUserLogued();
     this._isLogin.next(  user != null ? true : false);
     if(user){
+      
+      
       this._imgPerfil.next(user.imgPerfil);
     }
     return this.getCurrentUserLogued() ? true : false;
   }
 
+  private setUserLogued(userId:number){
+
+    this.userService.getById(userId).subscribe(value =>{
+      this._userLogued.next(value);
+      console.log(value);
+    })
+  }
   isInLogin(): Observable<boolean> {
-    return this._isLogin;
+    return this._isLogin.asObservable();
   }
 
 
@@ -78,6 +90,10 @@ export class AuthService {
     return null;
   }
 
+  getCurrentUserLoguedObs():Observable<User>{
+    return this._userLogued.asObservable();
+  }
+  
   getCurrentIdLogued():number{
     return this.getCurrentUserLogued()?.id!;
   }
@@ -89,6 +105,10 @@ export class AuthService {
   }
   getUserNameLogued():string{
     return this.getCurrentUserLogued()?.user!;
+  }
+
+  getUserId():Observable<number>{
+    return this._userID.asObservable().pipe(take(1));
   }
 
   setUserType(user: UserLogin) {

@@ -1,0 +1,16 @@
+<section class="logout">
+    <h1 class="logout__title">Logout</h1>
+    <span class="logout__subtitle">Are you want to log out?</span>
+    <div class="logout__buttons">
+        <app-main-button class="button"
+        (click) ="cancel()"
+        value="CANCEL"
+        backgroundColor="var(--primary-white)"
+        textColor="var(--primary-black)"
+        ></app-main-button>
+        <app-main-button class="button"
+        (click) ="logout()"
+        value="LOG OUT"
+        ></app-main-button>
+    </div>
+</section>
